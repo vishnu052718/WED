@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Godhala's Wedding Invitation</title>
+
+    <!-- Font Awesome Icons CDN -->
+    <script
+      src="https://kit.fontawesome.com/611e3af2c6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <!-- Navigation Bar -->
+    <section class="navigationSection">
+      <div class="names">
+        <p>Deekshitha Reddy <i class="fa-solid fa-heart"></i> Sathish Reddy</p>
+      </div>
+
+      <div class="menu-icon" id="menuIcon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class="navigationBarTags" id="navLinks">
+        <a href="#heroSection">Home</a>
+        <a href="#storySection">Our Story</a>
+        <a href="#eventsSection">Events</a>
+        
+        
+      </div>
+    </section>
+
+    <!-- Hero section -->
+    <section id="heroSection">
+      <h2>GODHALA's WEDDING INVITATION</h2>
+      <h2>The wedding of</h2>
+      <h1 style="color: var(--accent)">Deekshitha Reddy ❤️ Sathish Reddy</h1>
+      <h2><i class="fa-solid fa-calendar-days"></i>25th June, 2026</h2>
+      <p id="typeContent"></p>
+
+      <!-- Typewriter for hero section -->
+      <script>
+        const heroText = `With hearts full of joy, we invite you to share in our special day as we
+        begin our new journey together`;
+
+        const heroEl = document.getElementById("typeContent");
+
+        let j = 0;
+        const pace = 25;
+        let hasBegan = false;
+        function heroTypeWriter() {
+          if (j < heroText.length) {
+            heroEl.textContent += heroText.charAt(j);
+            j++;
+            setTimeout(heroTypeWriter, pace);
+          }
+        }
+        heroTypeWriter();
+      </script>
+      <div class="heroButtons">
+        
+        <button id="locationButton">
+          <i class="fa-solid fa-location-crosshairs"></i>Location
+        </button>
+      </div>
+    </section>
+
+    <!-- Our story -->
+    <section id="storySection" class="fade-up">
+      <h1>Our Love Story</h1>
+      <p style="font-size: 1.3rem">
+        From our first meeting to this beautiful moment, every step has been a
+        cherished memory. Join us as we celebrate our story
+      </p>
+      <div class="storyFocus">
+        <p id="typeWriter"></p>
+
+        <!-- Typewriting effect for the story -->
+        <script>
+          const text = `It all started with a glamorous encounter at a bustling festival, a
+          shared love for traditional music, and endless conversations under the
+          starlit sky. Deekshitha Reddy, with her radiant smile and compassionate heart,
+          captivated Sathish Reddy from the very first moment. Sathish Reddy, with his
+          unwavering kindness and adventurous spirit, soon became Deekshitha Reddy's
+          confidant and best friend. Over time, our friendship blossomed into a
+          deep profound love. We've navigated challenges, celebrated triumphs
+          and built a fondation rooted in respect, understanding and immense
+          joy. We are incredibly excited to embark on this beautiful journey of
+          marriage and to create a lifetime of new memories.`;
+
+          const element = document.getElementById("typeWriter");
+
+          let i = 0;
+          const speed = 40;
+          let hasStarted = false;
+          function typeWriter() {
+            if (i < text.length) {
+              element.textContent += text.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+          function isInView(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+          }
+
+          // Listen for scrolling
+          window.addEventListener("scroll", function () {
+            if (!hasStarted && isInView(element)) {
+              hasStarted = true;
+              typeWriter();
+            }
+          });
+        </script>
+        <img src="3177a5ab-3661-450a-be6f-4891cc41a655.jpg " alt="Deekshitha Reddy ❤️ Sathish Reddy" />
+      </div>
+    </section>
+
+    <!-- Events section -->
+    <section id="eventsSection" class="fade-up">
+      <h1>Our Wedding Events</h1>
+      <p>
+        Join us for a series of joyous celebrations as we begin our forever
+        together.
+      </p>
+
+      <div class="eventsGrid">
+        <div class="event">
+          <h2>Wedding Ceremony</h2>
+          <p class="date">June 25, 2026</p>
+          <p>9:05 AM onwards</p>
+          <p class="details">Join us to bless Deekshitha Reddy and Sathish Reddy.</p>
+        </div>
+        <div class="event">
+          <h2>Reception Gala</h2>
+          <p class="date">June 26, 2026</p>
+          <p>7:00 PM onwards</p>
+          <p class="details">Celebrate the beautiful beginning with family and friends.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bride Groom Family Slides -->
+    <section id="ritualsSection" class="fade-up">
+      <h1 style="color: var(--accent)">Our Family</h1>
+
+      <div class="ritualGrid">
+        <div>
+          <h1>Deekshitha Reddy</h1>
+          <p>Chi. La. Sow. Deekshitha Reddy, daughter of Smt. Godala Manjula Sri Godala Siddi Ram Reddy
+          </p>
+        </div>
+        <figure>
+          <img src="WhatsApp Image 2026-05-10 at 9.53.44 PM.jpeg " alt="Bride Picture" />
+          <figcaption>Deekshitha Reddy</figcaption>
+        </figure>
+      </div>
+
+      <div class="ritualGrid">
+        <div>
+          <h1>Sathish Reddy</h1>
+          <p>Chi. Sathish Reddy
+Only S/o. Smt. Patlolla Anjali & Sri Sai Reddy</p>
+        </div>
+        <figure>
+          <img src="WhatsApp Image 2026-05-10 at 9.53.44 PM (1).jpeg " alt="Groom Picture" />
+          <figcaption>Sathish Reddy</figcaption>
+        </figure>
+      </div>
+
+      <div class="ritualGrid">
+        <figure>
+          <img src="WhatsApp Image 2026-05-24 at 10.34.21 PM.jpeg " alt="Bride Family" />
+          <figcaption>Bride Family</figcaption>
+        </figure>
+        <figure>
+          <img src="DSC03562.JPG" alt="Groom Family" />
+          <figcaption>Groom Family</figcaption>
+        </figure>
+      </div>
+
+      <div class="ritualGrid">
+        <figure>
+          <img src="53bf9f8d-8ffd-4cc2-9dce-3a146b6a2bb5.png " alt="Aadhya Reddy" />
+          <figcaption style="font-size:2rem">రండి... రారండి మా పిన్ని పెళ్ళికి<br>ఆధ్యా రెడ్డి</figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footerSection">
+      <div class="footerContent">
+        <p class="footerNames">Deekshitha Reddy <i class="fa-solid fa-heart"></i> Sathish Reddy</p>
+        <p class="footerDate">25th June, 2026</p>
+      </div>
+      <p class="footerCopyright">© 2025 Desmond Tutu. All Rights Reserved</p>
+    </footer>
+
+    </body>
+  <script src="script.js"></script>
+</html>
